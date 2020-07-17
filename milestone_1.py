@@ -1,14 +1,11 @@
 """
 Project:Make a movie collection app.
-Directions:-
-    
-    2)make list of movies.->Done
-    3) create a menu. ->Done
-    4)Ask for comformation on the selection in menu_option->Done
-    5)Debug(program termination)
+    *Debug(program termination)
 Author:Devam A
 Discreption:
-
+this program take input for movies and makes the list of them and then prints out the list if invalid input is given then it shows error.
+this program lacks in saving the data when its finished due to use of list instead of database.
+Status:Failed
 """
 user_name = input("PLEASE ENTER YOUR NAME:")
 print(f"Hello, {user_name.title()}")
