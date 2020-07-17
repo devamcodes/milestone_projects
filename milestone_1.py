@@ -22,9 +22,10 @@ if user_input == 0:
             movies.append(user_input_movies)
             user_conformation = int(input("ENTER 8 TO CONTINUE ADDING OR ENTER ANY NUMBER TO VIEW MOVIE-LIST:"))
         print(movies)
+        input("THE PROGRAM COMPLETED.")
     else:
         print("THE PROGRAM TERMINATED.")
-        
+elif user_input == 1:
+    print("THE PROGRAM TERMINATED.")
 else:
     print("INVALID INPUT PLEASE TRY AGAIN:")
-input("THE PROGRAM COMPLETED.")
