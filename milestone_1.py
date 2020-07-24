@@ -32,7 +32,8 @@ menu_options()
 
 while user_conformation == 8:
     user_input = int(input("PLEASE ENTER THE OPTION NUMBER:"))
-    movies = []
+    #TODO:afetr this step the program starts malfunctioning.
+    movies = [] 
     if user_input == 0:
 
         while user_input == 0:
