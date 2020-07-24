@@ -9,23 +9,50 @@ Status:Failed
 """
 user_name = input("PLEASE ENTER YOUR NAME:")
 print(f"Hello, {user_name.title()}")
-menu_options = ['ADD A MOVIE','QUIT THE PROGRAM']
-for _ in range(len(menu_options)):
-    print(_, menu_options[_])
-user_input = int(input("PLEASE ENTER CORRESPONDING NUMBER:"))
-movies = []
-if user_input == 0:
-    user_conformation = int(input("TO CONFORM ADDING THE MOVIE TYPE 8 OR ENTER ANY NUMBER"))
-    if user_conformation == 8:
-        while user_conformation == 8:
+
+def find_movie(method):
+        if method == 1:
+            find_movie = input("ENTER MOVIE NAME:")
+            for movie in movies:
+                if find_movie.title() == elememt.movies.title():
+                    print(element)
+                    input("PROGRAM COMPLETED.")
+                    return movies.index(element)
+                
+def menu_options():
+    menu_options = ['ADD A MOVIE','QUIT THE PROGRAM','FIND MOVIE','VIEW THE MOVIE LIST']
+    for _ in range(len(menu_options)):
+        output = print(_, menu_options[_])
+    return output
+
+
+user_conformation = int(input("TO CONTINUE TYPE 8 OR ENTER ANY NUMBER TO TERMINATE:"))
+
+menu_options()
+
+while user_conformation == 8:
+    user_input = int(input("PLEASE ENTER THE OPTION NUMBER:"))
+    movies = []
+    if user_input == 0:
+
+        while user_input == 0:
             user_input_movies = input("PLEASE ENTER A MOVIE NAME:")
             movies.append(user_input_movies)
-            user_conformation = int(input("ENTER 8 TO CONTINUE ADDING OR ENTER ANY NUMBER TO VIEW MOVIE-LIST:"))
-        print(movies)
-        input("THE PROGRAM COMPLETED.")
-    else:
+            user_input = int(input("PLEASE ENTER THE OPTION NUMBER:"))
+
+    elif user_input == 1:
         print("THE PROGRAM TERMINATED.")
-elif user_input == 1:
-    print("THE PROGRAM TERMINATED.")
+
+    elif user_input == 2:
+        print("ENTER MOVIE NAME TO FIND THE MOVIE:")
+        find_movie
+
+    elif user_input == 3:
+         print(movies)
+         menu_options()
+
+    else:
+        print("INVALID INPUT PLEASE TRY AGAIN:")
+    
 else:
-    print("INVALID INPUT PLEASE TRY AGAIN:")
+    input("PROGRAM COMPLETED.")
