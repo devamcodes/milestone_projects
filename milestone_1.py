@@ -1,12 +1,15 @@
 """
-Project:Make a movie collection app.
+Project:Movie collection app.
 Author:Devam A
+
 Description:
-this program take input for movies and makes the list of them and then prints out the list if invalid input is given then it shows error.
-this program lacks in saving the data when its finished due to use of list instead of database.
-Status:Failed
+**This program needs database.
+
+
+Status:(THIS PROJECT IS MADE TO SUCCESS)SUCCESSFUL
+
 changes to be made:
-1. if movie is not found then error message should be shown
+*DONE 1. if movie is not found then error message should be shown
 *DONE 2. after te termination of the program it should show the ending message and close it
 *DONE 3. error handling should be added to enter the name
 *DONE 4. pressing 2 for termination of the program it should close the program
@@ -70,12 +73,3 @@ elif user_conformation == 1:
     print("program terminated by the user")
 else:
     raise ValueError("Invalid input. please try again..")
-
-"""
-test = ["hello"]
-test1 = ["hi"]
-test2 = []
-test2.append(test1)
-test2.append(test)
-print(test2)
-"""
