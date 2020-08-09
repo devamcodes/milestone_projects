@@ -6,56 +6,82 @@ Description:
 this program take input for movies and makes the list of them and then prints out the list if invalid input is given then it shows error.
 this program lacks in saving the data when its finished due to use of list instead of database.
 Status:Failed
+changes to be made:
+1. if movie is not found then error message should be shown
+2. after te termination of the program it should show the ending message and close it
+3. error handling should be added to enter the name
+*DONE 4. pressing 2 for termination of the program it should close the program
 """
-user_name = input("PLEASE ENTER YOUR NAME:")
-print(f"Hello, {user_name.title()}")
+def enter_user_name():
+    user_name = input("PLEASE ENTER YOUR NAME:")
+    try:
+        user_name_booleane = bool(user_name)
 
-def find_movie(method):
-        if method == 1:
-            find_movie = input("ENTER MOVIE NAME:")
-            for movie in movies:
-                if find_movie.title() == elememt.movies.title():
-                    print(element)
-                    input("PROGRAM COMPLETED.")
-                    return movies.index(element)
-                
-def menu_options():
-    menu_options = ['ADD A MOVIE','VIEW THE MOVIE LIST','FIND MOVIE','QUIT PROGRAM']
-    for _ in range(len(menu_options)):
-        output = print(_, menu_options[_])
-    return output
+    except ValueError:
+        raise ValueError("Invalid input please enter a name:")
+    else:
+        print(f"Hello, {user_name.title()}")
+
+
+movies = []
+
+
+def find_movie():
+    #To Do:1
+    find_movie = input("ENTER MOVIE NAME:")
+    for movie in movies:
+        if find_movie.title() == movie.title():
+            print(movie)
+        else:
+            raise ValueError("THIS MOVIE IS NOT IN YOUR COLLECTION,TRY AGAIN!")
+
+menu_option = """
+Please enter the option number:
+  0. Add Movie
+  1. View MovieList
+  2. Find Movie
+  3. Quit Program
+-->"""
+
 def add_movie():
+    
     user_input_movies = input("PLEASE ENTER A MOVIE NAME:")
     movies.append(user_input_movies)
-    user_input = int(input("PLEASE ENTER THE OPTION NUMBER:"))
     output = print("THE MOVIE IS ADDED TO THE COLLECTION.")
     return output
 
-user_conformation = int(input("TO CONTINUE TYPE 8 OR ENTER ANY NUMBER TO TERMINATE:"))
 
-menu_options()
+enter_user_name()
+user_conformation = int(input("TO CONTINUE TYPE 1 OR ENTER 2 TO TERMINATE THE ROGRAM:"))
+if user_conformation == 1:
+    while user_conformation == 1:
+        user_input = int(input(menu_option))
+        if user_input == 0:
+            add_movie()
 
-while user_conformation == 8:
-    user_input = int(input("PLEASE ENTER THE OPTION NUMBER:"))
-    #TODO:afetr this step the program starts malfunctioning.
-    movies = []
-    
-    if user_input == 0:
-        while user_input == 0:
-                add_movie()
-    elif user_input == 1:
-         print(movies)
-        
-    elif user_input == 2:
-        print("ENTER MOVIE NAME TO FIND THE MOVIE:")
-        find_movie
+        elif user_input == 1:
+            print(movies)
+        elif user_input == 2:
+            find_movie()
+        elif user_input == 3:
+            print("THE PROGRAM TERMINATED.")
+        else:
+            print("INVALID INPUT PLEASE TRY AGAIN:")
 
-    elif user_input == 3:
-        print("THE PROGRAM TERMINATED.")
-        menu_options()
-    
+        user_conformation = int(input("TO CONTINUE TYPE 1 OR ENTER 2 TO TERMINATE THE PROGRAM:"))
     else:
-        print("INVALID INPUT PLEASE TRY AGAIN:")
-    
+        input("Thank You!! come again and have a nice day!! ")
+        print("PROGRAM COMPLETED.")
+elif user_conformation == 2:
+    print("program terminated by the user")
 else:
-    input("PROGRAM COMPLETED.")
+    raise ValueError("Invalid input. please try again..")
+
+"""
+test = ["hello"]
+test1 = ["hi"]
+test2 = []
+test2.append(test1)
+test2.append(test)
+print(test2)
+"""
