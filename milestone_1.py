@@ -1,6 +1,5 @@
 """
 Project:Make a movie collection app.
-    *Debug(program termination)
 Author:Devam A
 Description:
 this program take input for movies and makes the list of them and then prints out the list if invalid input is given then it shows error.
@@ -8,19 +7,17 @@ this program lacks in saving the data when its finished due to use of list inste
 Status:Failed
 changes to be made:
 1. if movie is not found then error message should be shown
-2. after te termination of the program it should show the ending message and close it
+*DONE 2. after te termination of the program it should show the ending message and close it
 3. error handling should be added to enter the name
 *DONE 4. pressing 2 for termination of the program it should close the program
 """
 def enter_user_name():
     user_name = input("PLEASE ENTER YOUR NAME:")
-    try:
-        user_name_booleane = bool(user_name)
-
-    except ValueError:
-        raise ValueError("Invalid input please enter a name:")
-    else:
+    user_name_booleane = bool(user_name)
+    if user_name_booleane == True:
         print(f"Hello, {user_name.title()}")
+    else:
+        raise ValueError("Invalid input please enter a name:")
 
 
 movies = []
