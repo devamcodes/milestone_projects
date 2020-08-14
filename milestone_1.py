@@ -20,7 +20,9 @@ def enter_user_name():
     if user_name_booleane == True:
         print(f"Hello, {user_name.title()}")
     else:
-        raise ValueError("Invalid input please enter a name:")
+        input("program terminated!!")
+        raise ValueError("Invalid input please enter a valid name:")
+
 
 
 movies = []
@@ -34,6 +36,9 @@ def find_movie_option():
         print(f"We have found the movie in your movie collection:-> {find_movie.title()}")
     else:
         raise ValueError("THIS MOVIE IS NOT IN YOUR COLLECTION,TRY AGAIN!")
+
+
+
 
 menu_option = """
 Please enter the option number:
@@ -54,6 +59,7 @@ enter_user_name()
 user_conformation = int(input("TO CONTINUE TYPE 0 OR ENTER 1 TO TERMINATE THE ROGRAM:"))
 if user_conformation == 0:
     while user_conformation == 0:
+        #TODO:if enter is pressed instead of any number then raise an error.
         user_input = int(input(menu_option))
         if user_input == 0:
             add_movie()
