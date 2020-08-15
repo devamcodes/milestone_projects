@@ -3,6 +3,8 @@ Project:Book collection.
 Author:Devam A
 
 Description:book shop similar to apparel-shop
+STATUS: 1.need help in exiting the program while handling the errors
+        2.remove the glitches and TODO's
 steps:
 1. welcome message
 2. main menu
@@ -15,7 +17,7 @@ steps:
 4. database file import
 5.
 *Questions:
-    1.how to creat a temporary database file
+    1.how to create a temporary database file
 """
 MY_BOOKS = []
 
@@ -65,7 +67,6 @@ main_menu = """
 2. View My BOOKS
 3. Mark the book as read
 4. Remove the book
-5. Exit the program
 enter the index number:"""
 user_name = input("enter your name:")
 print(f"Hello,{user_name}")
@@ -91,9 +92,9 @@ try:
 except:
     raise ValueError("Invalid Input!! Try again.")
 """
-user_conformation = int(input("TO CONTINUE TYPE 0 OR ENTER 1 TO TERMINATE THE ROGRAM:"))
-if user_conformation == 0:
-    while user_conformation == 0:
+user_conformation = int(input("TO CONTINUE TYPE 0 OR ENTER 1 TO TERMINATE THE PROGRAM:"))
+while user_conformation == 0:
+     try :
         #TODO:if enter is pressed instead of any number then raise an error.
         user_input = int(input(main_menu))
         if user_input == 1:
@@ -104,15 +105,12 @@ if user_conformation == 0:
             mark_as_read()
         elif user_input == 4:
             remove_book()
-
         else:
-            print("INVALID INPUT PLEASE TRY AGAIN:")
+            print("Thank You!! come again and have a nice day!!")
+            print("PROGRAM COMPLETED.")
         user_conformation = int(input("TO CONTINUE TYPE 0 OR ENTER 1 TO TERMINATE THE PROGRAM:"))
-        #TODO:if user_conformation is other than 0 or 1 the program compelets instead of showing error.
-    else:
-        input("Thank You!! come again and have a nice day!! PRESS ENTER.")
-        print("PROGRAM COMPLETED.")
-elif user_conformation == 1:
-    print("program terminated by the user")
+        #TODO:if user_conformation is other than 0 or 1 the program should show error.
+     except ValueError:
+        raise ValueError("Invalid Input!! please try again..")
 else:
-    raise ValueError("Invalid input. please try again..")
+    print("program terminated by the user")
