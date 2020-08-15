@@ -27,25 +27,32 @@ def add_book():
     return MY_BOOKS
 
 
-def view_list():
-    print(MY_BOOKS)
-
+def view_list(option):
+    view_menu = """
+     1. list of books
+     2. table of list of books
+    """
+    user_input_view_list = int(input(view_menu))
+    # TODO:show the proper list of books with index
+    #this feature is not the perfect but it can do the work
+    if user_input_view_list == 2:
+        for _ in range(len(MY_BOOKS)):
+            print(_,MY_BOOKS[_])
+    else:
+        print(MY_BOOKS)
 
 def mark_as_read():
     user_input_mark_read = input("enter the name of book to mark it as read:")
-    #TODO:1. try-except loop is nit working properly
-    try:
-        mark_as_read_books = []
-        if user_input_mark_read in MY_BOOKS:
-            mark_as_read_books.append(user_input_mark_read)
-            print(f"{user_input_mark_read} book is added to mark as read.")
-
-    except:
-        raise ValueError(f"{user_input_mark_read} book is not in your book list")
+    #TODO:1. try-except loop is not working properly
+    mark_as_read_books = []
+    if user_input_mark_read in MY_BOOKS:
+        mark_as_read_books.append(user_input_mark_read)
+        print(f"{user_input_mark_read} book is added to mark as read.")
     else:
-        print(mark_as_read_books)
+        raise ValueError(f"{user_input_mark_read} book is not in your book list")
+
 def remove_book():
-    #TODO:show the proper list of books with index
+#TODO:show the list of books in columns and rows
     print(MY_BOOKS)
     user_input_remove_book = int(input("enter the book index to remove the book:"))
     MY_BOOKS.pop(user_input_remove_book)
@@ -62,17 +69,50 @@ main_menu = """
 enter the index number:"""
 user_name = input("enter your name:")
 print(f"Hello,{user_name}")
+"""user_input_while_loop = int(input("To continue press 1 and To exit the program press 0: "))
 user_input_menu = int(input(main_menu))
-while user_input_menu != 5:
+try:
+    while user_input_menu != 0:
 
-    if user_input_menu == 1:
-        add_book()
-    elif user_input_menu == 2:
-        view_list()
-    elif user_input_menu == 3:
-        mark_as_read()
+#TODO:program should complete at 5 and error should be also handled if pressed any thingelse
+        if user_input_menu == 1:
+            add_book()
+        elif user_input_menu == 2:
+            view_list(option = 0)
+        elif user_input_menu == 3:
+            mark_as_read()
+        elif user_input_menu == 4:
+            remove_book()
+        user_input_menu = int(input(main_menu))
+    else :
+        print("Exiting the program")
+
+
+except:
+    raise ValueError("Invalid Input!! Try again.")
+"""
+user_conformation = int(input("TO CONTINUE TYPE 0 OR ENTER 1 TO TERMINATE THE ROGRAM:"))
+if user_conformation == 0:
+    while user_conformation == 0:
+        #TODO:if enter is pressed instead of any number then raise an error.
+        user_input = int(input(main_menu))
+        if user_input == 1:
+            add_book()
+        elif user_input == 2:
+            view_list(option=0)
+        elif user_input == 3:
+            mark_as_read()
+        elif user_input == 4:
+            remove_book()
+
+        else:
+            print("INVALID INPUT PLEASE TRY AGAIN:")
+        user_conformation = int(input("TO CONTINUE TYPE 0 OR ENTER 1 TO TERMINATE THE PROGRAM:"))
+        #TODO:if user_conformation is other than 0 or 1 the program compelets instead of showing error.
     else:
-        remove_book()
-    user_input_menu = int(input(main_menu))
+        input("Thank You!! come again and have a nice day!! PRESS ENTER.")
+        print("PROGRAM COMPLETED.")
+elif user_conformation == 1:
+    print("program terminated by the user")
 else:
-    print("Exiting the program")
+    raise ValueError("Invalid input. please try again..")
