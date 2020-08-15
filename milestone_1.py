@@ -72,6 +72,7 @@ if user_conformation == 0:
             print("INVALID INPUT PLEASE TRY AGAIN:")
 
         user_conformation = int(input("TO CONTINUE TYPE 0 OR ENTER 1 TO TERMINATE THE PROGRAM:"))
+    #TODO:after this user_conformation if input is somthing else than 1 it still completes the program instead of error.
     else:
         input("Thank You!! come again and have a nice day!! PRESS ENTER.")
         print("PROGRAM COMPLETED.")
