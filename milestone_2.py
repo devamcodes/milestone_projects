@@ -67,10 +67,16 @@ main_menu = """
 2. View My BOOKS
 3. Mark the book as read
 4. Remove the book
-enter the index number:"""
+5. Exit the program
+enter the index number 
+-->"""
 user_name = input("enter your name:")
-print(f"Hello,{user_name}")
-"""user_input_while_loop = int(input("To continue press 1 and To exit the program press 0: "))
+user_name_boolean = bool(user_name)
+
+if user_name_boolean == True:
+    print(f"Hello,{user_name}")
+else:
+    raise ValueError("Invalid User Name!! Please Enter A Valid Name:")
 user_input_menu = int(input(main_menu))
 try:
     while user_input_menu != 0:
@@ -84,33 +90,11 @@ try:
             mark_as_read()
         elif user_input_menu == 4:
             remove_book()
+        elif user_input_menu == 5:
+            print("exiting the program!! ")
+            break
         user_input_menu = int(input(main_menu))
     else :
         print("Exiting the program")
-
-
 except:
     raise ValueError("Invalid Input!! Try again.")
-"""
-user_conformation = int(input("TO CONTINUE TYPE 0 OR ENTER 1 TO TERMINATE THE PROGRAM:"))
-while user_conformation == 0:
-     try :
-        #TODO:if enter is pressed instead of any number then raise an error.
-        user_input = int(input(main_menu))
-        if user_input == 1:
-            add_book()
-        elif user_input == 2:
-            view_list(option=0)
-        elif user_input == 3:
-            mark_as_read()
-        elif user_input == 4:
-            remove_book()
-        else:
-            print("Thank You!! come again and have a nice day!!")
-            print("PROGRAM COMPLETED.")
-        user_conformation = int(input("TO CONTINUE TYPE 0 OR ENTER 1 TO TERMINATE THE PROGRAM:"))
-        #TODO:if user_conformation is other than 0 or 1 the program should show error.
-     except ValueError:
-        raise ValueError("Invalid Input!! please try again..")
-else:
-    print("program terminated by the user")
