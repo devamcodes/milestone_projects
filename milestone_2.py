@@ -3,7 +3,9 @@ Project:Book collection.
 Author:Devam A
 
 Description:book shop similar to apparel-shop
-STATUS: 1.need help in exiting the program while handling the errors
+STATUS:test 1 successful
+        test 2 pending
+***DONE***1.need help in exiting the program while handling the errors
         2.remove the glitches and TODO's
 steps:
 1. welcome message
