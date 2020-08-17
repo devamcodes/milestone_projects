@@ -80,23 +80,27 @@ if user_name_boolean == True:
 else:
     raise ValueError("Invalid User Name!! Please Enter A Valid Name:")
 user_input_menu = int(input(main_menu))
-try:
-    while user_input_menu != 0:
+user_input_menu_bool = bool(user_input_menu)
+if user_input_menu_bool == True:
+    try:
+        while user_input_menu != 0:
 
-#TODO:program should complete at 5 and error should be also handled if pressed any thingelse
-        if user_input_menu == 1:
-            add_book()
-        elif user_input_menu == 2:
-            view_list(option = 0)
-        elif user_input_menu == 3:
-            mark_as_read()
-        elif user_input_menu == 4:
-            remove_book()
-        elif user_input_menu == 5:
-            print("exiting the program!! ")
-            break
-        user_input_menu = int(input(main_menu))
-    else :
-        print("Exiting the program")
-except:
-    raise ValueError("Invalid Input!! Try again.")
+    #TODO:program should complete at 5 and error should be also handled if pressed any thingelse
+            if user_input_menu == 1:
+                add_book()
+            elif user_input_menu == 2:
+                view_list(option = 0)
+            elif user_input_menu == 3:
+                mark_as_read()
+            elif user_input_menu == 4:
+                remove_book()
+            elif user_input_menu == 5:
+                print("exiting the program!! ")
+                break
+            user_input_menu = int(input(main_menu))
+        else :
+            print("Exiting the program")
+    except:
+        raise ValueError("Invalid Input!! Try again.")
+else:
+    raise ValueError("Invalid Input!! please try again...")
