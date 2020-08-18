@@ -32,22 +32,12 @@ def add_book():
 
 
 def view_list(option):
-    view_menu = """
-     1. list of books
-     2. table of list of books
-    """
-    user_input_view_list = int(input(view_menu))
-    # TODO:show the proper list of books with index
-    #this feature is not the perfect but it can do the work
-    if user_input_view_list == 2:
-        for _ in range(len(MY_BOOKS)):
-            print(_,MY_BOOKS[_])
-    else:
-        print(MY_BOOKS)
+    #A simple list would be enough to view a book collection instead in removebook books with index numbers is good.
+    print(MY_BOOKS)
 
 def mark_as_read():
     user_input_mark_read = input("enter the name of book to mark it as read:")
-    #TODO:1. try-except loop is not working properly
+    #TODO:1. try-except loop is not working properly here.
     mark_as_read_books = []
     if user_input_mark_read in MY_BOOKS:
         mark_as_read_books.append(user_input_mark_read)
@@ -56,10 +46,10 @@ def mark_as_read():
         raise ValueError(f"{user_input_mark_read} book is not in your book list")
 
 def remove_book():
-#TODO:show the list of books in columns and rows
-    print(MY_BOOKS)
-    user_input_remove_book = int(input("enter the book index to remove the book:"))
-    MY_BOOKS.pop(user_input_remove_book)
+    for count,books in enumerate(MY_BOOKS,1):
+        print(count,books)
+    user_input_remove_book = input("enter the book name to remove the book:")
+    MY_BOOKS.remove(user_input_remove_book)
     print(f"{user_input_remove_book} is removed from the list.")
 
 
@@ -82,6 +72,7 @@ else:
 user_input_menu = int(input(main_menu))
 user_input_menu_bool = bool(user_input_menu)
 if user_input_menu_bool == True:
+    #error is not working properly.
     try:
         while user_input_menu != 0:
 
@@ -101,6 +92,6 @@ if user_input_menu_bool == True:
         else :
             print("Exiting the program")
     except:
-        raise ValueError("Invalid Input!! Try again.")
+        raise ValueError("Invalid Input!! Try again...")
 else:
-    raise ValueError("Invalid Input!! please try again...")
+    raise ValueError("Invalid Input!! please enter a valid input.")
