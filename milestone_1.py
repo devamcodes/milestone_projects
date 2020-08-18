@@ -6,13 +6,10 @@ Description:
 **This program needs database.
 
 
-Status:(THIS PROJECT IS MADE TO SUCCESS)SUCCESSFUL
+Status:SUCCESSFUL
 
 changes to be made:
-*DONE 1. if movie is not found then error message should be shown
-*DONE 2. after te termination of the program it should show the ending message and close it
-*DONE 3. error handling should be added to enter the name
-*DONE 4. pressing 2 for termination of the program it should close the program
+1. after the error message goes on the program should continue.
 """
 def enter_user_name():
     user_name = input("PLEASE ENTER YOUR NAME:")
@@ -30,7 +27,7 @@ find_movie_name = []
 
 
 def find_movie_option():
-    #To Do:1
+    #some statements changed to coorect the grammar.
     find_movie = input("ENTER MOVIE NAME:")
     if find_movie in movies:
         print(f"BOOYA!!!We have found the {find_movie.title()} movie in your movie collection")
@@ -68,7 +65,7 @@ def remove_movie():
 
 
 enter_user_name()
-user_input = 0
+user_input = 0#due to this user conformation part can be removed.
 if user_input == 0:
     while user_input == 0:
         #TODO:if enter is pressed instead of any number then raise an error.
@@ -80,7 +77,7 @@ if user_input == 0:
             print(movies)
         elif user_input == 3:
             find_movie_option()
-        elif user_input == 4:
+        elif user_input == 4:#option added
             remove_movie()
         elif user_input == 5:
             print("program completed...")
