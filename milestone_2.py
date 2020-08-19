@@ -55,6 +55,7 @@ def remove_book():
 
 
 main_menu = """
+MAIN MENU:
 1. Add book to MY BOOKS
 2. View My BOOKS
 3. Mark the book as read
