@@ -21,7 +21,14 @@ steps:
 *Questions:
     1.how to create a temporary database file
 """
+
 MY_BOOKS = []
+
+"""
+1. create a database file  and add all the functions in the file except the main menu function
+2. mark as read function can be improvised a different list should be created. 
+3. 
+"""
 
 
 def add_book():
@@ -31,13 +38,13 @@ def add_book():
     return MY_BOOKS
 
 
-def view_list(option):
-    #A simple list would be enough to view a book collection instead in removebook books with index numbers is good.
+def view_list():
+    # A simple list would be enough to view a book collection instead in removebook books with index numbers is good.
     print(MY_BOOKS)
+
 
 def mark_as_read():
     user_input_mark_read = input("enter the name of book to mark it as read:")
-    #TODO:1. try-except loop is not working properly here.
     mark_as_read_books = []
     if user_input_mark_read in MY_BOOKS:
         mark_as_read_books.append(user_input_mark_read)
@@ -45,13 +52,16 @@ def mark_as_read():
     else:
         raise ValueError(f"{user_input_mark_read} book is not in your book list")
 
-def remove_book():
-    for count,books in enumerate(MY_BOOKS,1):
-        print(count,books)
-    user_input_remove_book = input("enter the book name to remove the book:")
-    MY_BOOKS.remove(user_input_remove_book)
-    print(f"{user_input_remove_book} is removed from the list.")
 
+def remove_book():
+        for count, books in enumerate(MY_BOOKS,1):
+            print(count, books)
+        user_input_remove_book = input("enter the book name to remove the book:")
+        if user_input_remove_book in MY_BOOKS:
+            MY_BOOKS.remove(user_input_remove_book)
+            print(f"{user_input_remove_book} is removed from the list.")
+        else:
+            raise ValueError("Book not found!! Enter correct book name to remove from your list. Try again...")
 
 
 main_menu = """
@@ -76,14 +86,17 @@ if user_input_menu_bool == True:
     #error is not working properly.
     try:
         while user_input_menu != 0:
+            """Idea--> cereate a function that exits the program which gives the value to while loop to end 
+            and at the end of other functions give the value 0 to while loop to resolve the error."""
 
-    #TODO:program should complete at 5 and error should be also handled if pressed any thingelse
+    #TODO:program should complete at 5 and error should be also handled if pressed any thing else.
             if user_input_menu == 1:
                 add_book()
             elif user_input_menu == 2:
-                view_list(option = 0)
+                view_list()
             elif user_input_menu == 3:
                 mark_as_read()
+                #todo:if book is not found the error is raised but along with that another error at line 104 raises which should be resolved
             elif user_input_menu == 4:
                 remove_book()
             elif user_input_menu == 5:
@@ -92,6 +105,7 @@ if user_input_menu_bool == True:
             user_input_menu = int(input(main_menu))
         else :
             print("Exiting the program")
+            raise ValueError("Incorrect Input!!!")
     except:
         raise ValueError("Invalid Input!! Try again...")
 else:
