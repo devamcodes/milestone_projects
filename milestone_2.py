@@ -35,12 +35,14 @@ def add_book():
     user_input_add = input("enter the book name:")
     MY_BOOKS.append(user_input_add)
     print("Book added to MY BOOKS")
+    user_input_menu = 0
     return MY_BOOKS
 
 
 def view_list():
     # A simple list would be enough to view a book collection instead in removebook books with index numbers is good.
     print(MY_BOOKS)
+    user_input_menu = 0
 
 
 def mark_as_read():
@@ -49,6 +51,7 @@ def mark_as_read():
     if user_input_mark_read in MY_BOOKS:
         mark_as_read_books.append(user_input_mark_read)
         print(f"{user_input_mark_read} book is added to mark as read.")
+        user_input_menu = 0
     else:
         raise ValueError(f"{user_input_mark_read} book is not in your book list")
 
@@ -60,6 +63,7 @@ def remove_book():
         if user_input_remove_book in MY_BOOKS:
             MY_BOOKS.remove(user_input_remove_book)
             print(f"{user_input_remove_book} is removed from the list.")
+            user_input_menu = 0
         else:
             raise ValueError("Book not found!! Enter correct book name to remove from your list. Try again...")
 
@@ -85,7 +89,7 @@ user_input_menu_bool = bool(user_input_menu)
 if user_input_menu_bool == True:
     #error is not working properly.
     try:
-        while user_input_menu != 0:
+        while user_input_menu == 0:
             """Idea--> cereate a function that exits the program which gives the value to while loop to end 
             and at the end of other functions give the value 0 to while loop to resolve the error."""
 
@@ -108,5 +112,7 @@ if user_input_menu_bool == True:
             raise ValueError("Incorrect Input!!!")
     except:
         raise ValueError("Invalid Input!! Try again...")
+    else:
+        print("exiting the program")
 else:
     raise ValueError("Invalid Input!! please enter a valid input.")
