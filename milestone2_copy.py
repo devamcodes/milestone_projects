@@ -4,10 +4,11 @@ Author: This is the copied code
 
 Description:This project is better than milestone2
 status:
-1. one error occurred in viewing the list(option 2)
-2. one todo added.
+1. one error occurred in viewing the list(option 2)***REMOVED***
+2. two todo added.
 test 1 --> successful with exception
-test 2-->
+test 2--> partially successful.
+test 3-->
 """
 from utils import database
 from utils.database import My_Books
@@ -23,7 +24,6 @@ enter the index number
 -->"""
 
 
-
 def add_the_book():
     name = input("enter the book name:")
     author = input("enter the author name:")
@@ -32,17 +32,28 @@ def add_the_book():
 
 
 def view_book_list():
-    database.My_Books()
+    database.view_books()
     for books in My_Books:
-        read ='YES' if books['read'] else 'NO'
-        print(f"{books['name']} by author{books['author']}, read{books['read']}.")
+        read = 'YES' if books['read'] else 'NO'
+        print(f"The {books['name']} book is written by author {books['author']},you have read this book -->{read}.")
 
 
 def mark_book_as_read():
-    name = input("enter the name of the book:")
-    database.mark_as_read(name)
-    print(f"The {name} book is marked as read. ")
-
+    method ="""
+    1. Mark the book as read via book name.
+    2. Mark the book as read via book author.
+    """
+    user_chioce = int(input(method))
+    if user_chioce == 1:
+        name = input("enter the name of the book:")
+        database.mark_as_read_1(name)
+        print(f"The {name} book is marked as read. ")
+    elif user_chioce == 2:
+        author = input("enter the author name:")
+        database.mark_as_read_2(author)
+        print(f"The book written by the author {author} is marked as read.")
+    else:
+        raise ValueError("Please enter the valid input.")
 
 def remove_the_book():
     book_name = input("enter the book name you want to remove:")
@@ -63,10 +74,10 @@ while user_input != 5:
     if user_input == 1:
         add_the_book()
     elif user_input == 2:
-        view_book_list()#error occured: list is not callable.
+        view_book_list()
     elif user_input == 3:
         mark_book_as_read()
-    elif user_input == 4:
+    elif user_input == 4:#Todo:once this function was called and again used option one but still book didnt get added to the list and then code malfunctions
         remove_the_book()
     else:
         raise ValueError("Invalid Input!! Please enter the valid value...")

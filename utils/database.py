@@ -9,11 +9,16 @@ def view_books():
     return My_Books
 
 
-def mark_as_read(name):
+def mark_as_read_1(name):
     for books in My_Books:
         if books['name'] == name:
             books['read'] = True
 
+
+def mark_as_read_2(author):
+    for books in My_Books:
+        if books['author'] == author:
+            books['read'] = True
 
 def remove_book(name):
     """for books in My_Books:
