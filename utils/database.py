@@ -3,7 +3,7 @@ My_Books = "books.txt"
 
 def add_book(name, author):
     with open(My_Books,'a') as file:
-        file.write(f"{name},{author},0")
+        file.write(f"{name},{author},0\n")
 
 
 def view_books():
