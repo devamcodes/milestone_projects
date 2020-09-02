@@ -34,7 +34,7 @@ def add_the_book():
 def view_book_list():
     database.view_books()
     for books in My_Books:
-        read = 'YES' if books['read'] else 'NO'
+        read = 'yes' if books['read'] else 'no'
         print(f"The {books['name']} book is written by author {books['author']},you have read this book -->{read}.")
 
 

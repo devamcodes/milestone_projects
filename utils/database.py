@@ -1,33 +1,47 @@
-My_Books = []
+My_Books = "books.txt"
 
 
 def add_book(name, author):
-    My_Books.append({'name': name, 'author': author, 'read': False})
+    with open(My_Books,'a') as file:
+        file.write(f"{name},{author},0")
 
 
 def view_books():
-    return My_Books
+    with open(My_Books,'r') as file:
+        line = [lines for lines in file.readlines()]#todo:may be needed to use split function as shown in the course but check it first.
 
 
 def mark_as_read(name):
-    for books in My_Books:
-        if books['name'] == name:
-            if books['name'] == name:
-                books['read'] = True
+    books = view_books()
+    for book in books:
+        if book['name'] == name:
+                book['read'] = 1
         else:
             raise ValueError("Book not found!!!")
+    _save_the_books(books)
+
+
+def _save_the_books(books):
+    with open(My_Books,'w') as file:
+        for book in books:
+            file.write(f"{book['name']},{book['author']},{book['read']}\n")
+
 
 def mark_as_unread(name):
-    for books in My_Books:
-        if books['name'] == name:
-            if books['name'] == name:
-                books['read'] = False
+    books = view_books()
+    for book in books:
+        if book['name'] == name:
+            if book['name'] == name:
+                book['read'] = 0
         else:
             raise ValueError("Book for this author not found!!!")
+    _save_the_books(books)
+
+
 def remove_book(name):
-    for books in My_Books:
-        if books['name'] == name:
-            My_Books.remove(name)
+    books = view_books()
+    books = [book for book in books if book['name'] != name]
+    _save_the_books(books)
 """
     global My_Books
     My_Books = [books for books in My_Books if books['name'] == name]
