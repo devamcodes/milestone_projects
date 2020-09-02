@@ -17,7 +17,7 @@ main_menu = """
 MAIN MENU:
 1. Add book to MY BOOKS
 2. View My BOOKS
-3. Mark the book as read
+3. Mark the book as read or unread
 4. Remove the book
 5. Exit the program
 enter the index number 
@@ -27,7 +27,7 @@ enter the index number
 def add_the_book():
     name = input("enter the book name:")
     author = input("enter the author name:")
-    database.add_book(name, author)
+    database.add_book(name, author)#TODO: error occurred "list.remove():x not in list" even book was shown in view books option.
     print(f"The {name} book is added to MY BOOKS.")
 
 
@@ -38,27 +38,27 @@ def view_book_list():
         print(f"The {books['name']} book is written by author {books['author']},you have read this book -->{read}.")
 
 
-def mark_book_as_read():
+def mark_book_as_read_or_unread():
     method ="""
-    1. Mark the book as read via book name.
-    2. Mark the book as read via book author.
+    1. Mark the book as read.
+    2. Mark the book as unread.
     """
     user_chioce = int(input(method))
     if user_chioce == 1:
         name = input("enter the name of the book:")
-        database.mark_as_read_1(name)
+        database.mark_as_read(name)
         print(f"The {name} book is marked as read. ")
     elif user_chioce == 2:
-        author = input("enter the author name:")
-        database.mark_as_read_2(author)
-        print(f"The book written by the author {author} is marked as read.")
+        name = input("enter the author name:")
+        database.mark_as_unread(name)
+        print(f"The book {name} is marked as unread.")
     else:
         raise ValueError("Please enter the valid input.")
 
 def remove_the_book():
-    book_name = input("enter the book name you want to remove:")
-    database.remove_book(book_name)
-    print(f"The {book_name} book is removed from MY BOOKS.")
+    name = input("enter the book name you want to remove:")
+    database.remove_book(name)
+    print(f"The {name} book is removed from MY BOOKS.")
 
 
 #todo:learn how to import this user_name function from user_name.py.
@@ -76,7 +76,7 @@ while user_input != 5:
     elif user_input == 2:
         view_book_list()
     elif user_input == 3:
-        mark_book_as_read()
+        mark_book_as_read_or_unread()
     elif user_input == 4:#Todo:once this function was called and again used option one but still book didnt get added to the list and then code malfunctions
         remove_the_book()
     else:

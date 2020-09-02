@@ -9,21 +9,26 @@ def view_books():
     return My_Books
 
 
-def mark_as_read_1(name):
+def mark_as_read(name):
     for books in My_Books:
         if books['name'] == name:
-            books['read'] = True
+            if books['name'] == name:
+                books['read'] = True
+        else:
+            raise ValueError("Book not found!!!")
 
-
-def mark_as_read_2(author):
+def mark_as_unread(name):
     for books in My_Books:
-        if books['author'] == author:
-            books['read'] = True
-
+        if books['name'] == name:
+            if books['name'] == name:
+                books['read'] = False
+        else:
+            raise ValueError("Book for this author not found!!!")
 def remove_book(name):
-    """for books in My_Books:
-      if books['name'] == name:
+    for books in My_Books:
+        if books['name'] == name:
             My_Books.remove(name)
-       """
+"""
     global My_Books
-    My_Books = [books for books in My_Books if books['name'] != name ]
+    My_Books = [books for books in My_Books if books['name'] == name]
+ """
