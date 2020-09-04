@@ -5,13 +5,14 @@ Author: This is the copied code
 Description:This project is better than milestone2
 status:
 1. one error occurred in viewing the list(option 2)***REMOVED***
-2. two todo added.
+2. one "todo". remaining
+3. error occurred :- if you run the program for the first time and you don't add a book but you try to mark a book as read which is already added.
 test 1 --> successful with exception
 test 2--> partially successful.
-test 3-->
+test 3--> partly successful
 """
 from utils import database
-from utils.database import My_Books
+
 
 main_menu = """
 MAIN MENU:
@@ -27,22 +28,33 @@ enter the index number
 def add_the_book():
     name = input("enter the book name:")
     author = input("enter the author name:")
-    database.add_book(name, author)#TODO: error occurred "list.remove():x not in list" even book was shown in view books option.
-    print(f"The {name} book is added to MY BOOKS.")
+    database.add_book(name, author)
+    print(f"The {name} book written by is added to MY BOOKS.")
 
 
 def view_book_list():
-    database.view_books()
-    for books in My_Books:
-        read = 'yes' if books['read'] else 'no'
-        print(f"The {books['name']} book is written by author {books['author']},you have read this book -->{read}.")
+    method = """
+    1. view books as statement form
+    2. view books as tabular form
+    """
+    user_input_for_view_books = int(input(method))
+    if user_input_for_view_books == 1:
+        for books in database.view_books():
+            read = 'yes' if books['read'] == 1 else 'no'
+            print(f"The {books['name']} book is written by author {books['author']},you have read this book -->{read}.")
+    elif user_input_for_view_books == 2:
+        for books in database.view_books():
+            read = 'yes' if books['read'] == 1 else 'no'
+            print(f"{books['name']} || {books['author']}  || {read}")
 
+    else:
+        raise ValueError("Invalid input!!! Please try again....")
 
 def mark_book_as_read_or_unread():
     method ="""
     1. Mark the book as read.
     2. Mark the book as unread.
-    """
+    -->"""
     user_chioce = int(input(method))
     if user_chioce == 1:
         name = input("enter the name of the book:")
