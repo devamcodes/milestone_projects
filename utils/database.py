@@ -1,4 +1,21 @@
+import sqlite3
+
 My_Books = "books.txt"
+"""
+def create_books_table():
+    connection = sqlite3.connect('data.db')
+    cursor = connection.cursor()
+
+    cursor.execute('CREATE TABLE My_Books(name text primary key, author text, read integer)')
+
+    connection.commit()
+    connection.close()
+"""
+
+
+def create_books_table():
+    with open(My_Books, 'w') as file:
+        pass
 
 
 def add_book(name, author):
@@ -19,7 +36,7 @@ def mark_as_read(name):
     books = view_books()
     for book in books:
         if book['name'] == name:
-            book['read'] = 1
+            book['read'] = '1'
         else:
             raise ValueError("Book not found!!!")
     _save_the_books(books)
@@ -36,7 +53,7 @@ def mark_as_unread(name):
     for book in books:
         if book['name'] == name:
             if book['name'] == name:
-                book['read'] = 0
+                book['read'] = '0'
         else:
             raise ValueError("Book not found!!!")
     _save_the_books(books)

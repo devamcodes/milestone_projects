@@ -1,12 +1,14 @@
 """
 Project: learn database from the course
-Author: This is the copied code
+Author: Devam A
 
 Description:This project is better than milestone2
 status:
-1. one error occurred in viewing the list(option 2)***REMOVED***
+1. try to add history function.a function which takes input from My_books but dont get affected from any function of the code it tracks all adds, markasreads, removes.
 2. one "todo". remaining
 3. error occurred :- if you run the program for the first time and you don't add a book but you try to mark a book as read which is already added.
+4. if i add some data outside the pycharm directly in the file then it raise index error list index out of range.
+5. if a book is not present or maybe present in the list and if you call for mark as read function it remove all the data from the database file.
 test 1 --> successful with exception
 test 2--> partially successful.
 test 3--> partly successful
@@ -40,11 +42,11 @@ def view_book_list():
     user_input_for_view_books = int(input(method))
     if user_input_for_view_books == 1:
         for books in database.view_books():
-            read = 'yes' if books['read'] == 1 else 'no'
-            print(f"The {books['name']} book is written by author {books['author']},you have read this book -->{read}.")
+            read = 'Yes' if books['read'] == '1' else 'No'
+            print(f"The {books['name']} book is written by author {books['author']},you have {read} this book.")
     elif user_input_for_view_books == 2:
         for books in database.view_books():
-            read = 'yes' if books['read'] == 1 else 'no'
+            read = 'No' if books['read'] == '0' else 'Yes'
             print(f"{books['name']} || {books['author']}  || {read}")
 
     else:
@@ -55,6 +57,7 @@ def mark_book_as_read_or_unread():
     1. Mark the book as read.
     2. Mark the book as unread.
     -->"""
+    database.create_books_table()
     user_chioce = int(input(method))
     if user_chioce == 1:
         name = input("enter the name of the book:")
@@ -89,7 +92,7 @@ while user_input != 5:
         view_book_list()
     elif user_input == 3:
         mark_book_as_read_or_unread()
-    elif user_input == 4:#Todo:once this function was called and again used option one but still book didnt get added to the list and then code malfunctions
+    elif user_input == 4:
         remove_the_book()
     else:
         raise ValueError("Invalid Input!! Please enter the valid value...")
