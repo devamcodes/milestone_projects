@@ -12,8 +12,9 @@ status:
 test 1 --> successful with exception
 test 2--> partially successful.
 test 3--> partly successful
+1. import user_name_function
 """
-from utils import database
+from utils import sqlite_databse_for_milestone2_copy
 
 
 main_menu = """
@@ -30,7 +31,7 @@ enter the index number
 def add_the_book():
     name = input("enter the book name:")
     author = input("enter the author name:")
-    database.add_book(name, author)
+    sqlite_databse_for_milestone2_copy.add_book(name, author)
     print(f"The {name} book written by is added to MY BOOKS.")
 
 
@@ -41,12 +42,12 @@ def view_book_list():
     """
     user_input_for_view_books = int(input(method))
     if user_input_for_view_books == 1:
-        for books in database.view_books():
-            read = 'Yes' if books['read'] == '1' else 'No'
+        for books in sqlite_databse_for_milestone2_copy.view_books():
+            read = 'Read' if books['read'] else 'Not read'
             print(f"The {books['name']} book is written by author {books['author']},you have {read} this book.")
     elif user_input_for_view_books == 2:
-        for books in database.view_books():
-            read = 'No' if books['read'] == '0' else 'Yes'
+        for books in sqlite_databse_for_milestone2_copy.view_books():
+            read = 'Read' if books['read'] else 'Not read'
             print(f"{books['name']} || {books['author']}  || {read}")
 
     else:
@@ -57,22 +58,22 @@ def mark_book_as_read_or_unread():
     1. Mark the book as read.
     2. Mark the book as unread.
     -->"""
-    database.create_books_table()
-    user_chioce = int(input(method))
-    if user_chioce == 1:
+
+    user_choice = int(input(method))
+    if user_choice == 1:
         name = input("enter the name of the book:")
-        database.mark_as_read(name)
+        sqlite_databse_for_milestone2_copy.mark_as_read(name)
         print(f"The {name} book is marked as read. ")
-    elif user_chioce == 2:
+    elif user_choice == 2:
         name = input("enter the author name:")
-        database.mark_as_unread(name)
+        sqlite_databse_for_milestone2_copy.mark_as_unread(name)
         print(f"The book {name} is marked as unread.")
     else:
         raise ValueError("Please enter the valid input.")
 
 def remove_the_book():
     name = input("enter the book name you want to remove:")
-    database.remove_book(name)
+    sqlite_databse_for_milestone2_copy.remove_book(name)
     print(f"The {name} book is removed from MY BOOKS.")
 
 
@@ -85,6 +86,7 @@ else:
     raise ValueError("Invalid User Name!! Please Enter A Valid Name:")
 
 user_input = int(input(main_menu))
+sqlite_databse_for_milestone2_copy.create_books_tables()
 while user_input != 5:
     if user_input == 1:
         add_the_book()

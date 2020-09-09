@@ -1,5 +1,3 @@
-import sqlite3
-
 My_Books = "books.txt"
 """
 def create_books_table():
