@@ -32,11 +32,11 @@ def mark_as_read(name):
         cursor.execute('UPDATE books SET read = 1 WHERE name = ?', (name,))
 
 
-def mark_as_unread(name):
+def mark_as_unread(name,author):
     with DatabaseConnection('database_for_milestone2.db') as connection:
         cursor = connection.cursor()
 
-        cursor.execute('UPDATE books SET read = 0 WHERE name = ?', (name,))
+        cursor.execute('UPDATE books SET read = 0 WHERE VALUES (?, ?)', (name,author))
 
 
 def remove_book(name):

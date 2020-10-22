@@ -5,14 +5,12 @@ Author: Devam A
 Description:This project is better than milestone2
 status:
 1. try to add history function.a function which takes input from My_books but dont get affected from any function of the code it tracks all adds, markasreads, removes.
-2. one "todo". remaining
 3. error occurred :- if you run the program for the first time and you don't add a book but you try to mark a book as read which is already added.
 4. if i add some data outside the pycharm directly in the file then it raise index error list index out of range.
 5. if a book is not present or maybe present in the list and if you call for mark as read function it remove all the data from the database file.
 test 1 --> successful with exception
 test 2--> partially successful.
 test 3--> partly successful
-1. import user_name_function
 """
 from utils import sqlite_databse_for_milestone2_copy
 
@@ -32,7 +30,7 @@ def add_the_book():
     name = input("enter the book name:")
     author = input("enter the author name:")
     sqlite_databse_for_milestone2_copy.add_book(name, author)
-    print(f"The {name} book written by is added to MY BOOKS.")
+    print(f"The {name} book written by {author} is added to MY BOOKS.")
 
 
 def view_book_list():
@@ -61,23 +59,30 @@ def mark_book_as_read_or_unread():
 
     user_choice = int(input(method))
     if user_choice == 1:
-        name = input("enter the name of the book:")
-        sqlite_databse_for_milestone2_copy.mark_as_read(name)
-        print(f"The {name} book is marked as read. ")
+        try:
+            name = input("enter the name of the book:")
+            sqlite_databse_for_milestone2_copy.mark_as_read(name)
+            print(f"The {name} book is marked as read. ")
+        except:
+            raise ValueError("Book not found in My Books!!!Try again..")
     elif user_choice == 2:
-        name = input("enter the author name:")
-        sqlite_databse_for_milestone2_copy.mark_as_unread(name)
-        print(f"The book {name} is marked as unread.")
+        try:
+            name = input("enter the book name:")
+            author = input("enter the author name:")
+            sqlite_databse_for_milestone2_copy.mark_as_unread(name, author)
+            print(f"The book {name} is marked as unread.")
+        except:
+            raise ValueError("Book not found!!Please try again..")
     else:
         raise ValueError("Please enter the valid input.")
 
 def remove_the_book():
     name = input("enter the book name you want to remove:")
+
     sqlite_databse_for_milestone2_copy.remove_book(name)
     print(f"The {name} book is removed from MY BOOKS.")
 
 
-#todo:learn how to import this user_name function from user_name.py.
 user_name = input("Enter your name:")
 user_name_boolean = bool(user_name)
 if user_name_boolean == True:
