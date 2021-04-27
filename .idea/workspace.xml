@@ -20,18 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="921608ce-f472-4bfb-9b16-2e7992e6317d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/milestone_projects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/milestone_projects.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database_for_milestone2.db" beforeDir="false" afterPath="$PROJECT_DIR$/database_for_milestone2.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/milestone2_copy.py" beforeDir="false" afterPath="$PROJECT_DIR$/milestone2_copy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/milestone_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/milestone_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/milestone_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/milestone_2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scraping_book/locators/book_locators.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraping_book/locators/book_locators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scraping_project/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraping_project/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scraping_project/locators/qoutes_page_locators.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraping_project/locators/qoutes_page_locators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scraping_project/pages/quotes_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraping_project/pages/quotes_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/sqlite_databse_for_milestone2_copy.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
