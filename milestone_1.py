@@ -11,14 +11,7 @@ Status:SUCCESSFUL
 changes to be made:
 1. after the error message goes on the program should continue.
 """
-def enter_user_name():
-    user_name = input("PLEASE ENTER YOUR NAME:")
-    user_name_booleane = bool(user_name)
-    if user_name_booleane == True:
-        print(f"Hello, {user_name.title()}")
-    else:
-        print("program terminated!!")
-        raise ValueError("Invalid input please enter a valid name")
+
 
 
 
@@ -26,13 +19,6 @@ movies = []
 find_movie_name = []
 
 
-def find_movie_option():
-    #some statements changed to coorect the grammar.
-    find_movie = input("ENTER MOVIE NAME:")
-    if find_movie in movies:
-        print(f"BOOYA!!!We have found the {find_movie.title()} movie in your movie collection")
-    else:
-        raise ValueError("THIS MOVIE IS NOT IN YOUR COLLECTION,TRY AGAIN!")
 
 #TODO:after raising the error the program must continue but still it is not happening after the use of that keyword.
 
@@ -46,6 +32,23 @@ Please enter the option number:
   4. Remove Movie
   5. Exit Program
 -->"""
+
+def enter_user_name():
+    user_name = input("PLEASE ENTER YOUR NAME:")
+    user_name_booleane = bool(user_name)
+    if user_name_booleane == True:
+        print(f"Hello, {user_name.title()}")
+    else:
+        print("program terminated!!")
+        raise ValueError("Invalid input please enter a valid name")
+
+def find_movie_option():
+    #some statements changed to coorect the grammar.
+    find_movie = input("ENTER MOVIE NAME:")
+    if find_movie in movies:
+        print(f"BOOYA!!!We have found the {find_movie.title()} movie in your movie collection")
+    else:
+        raise ValueError("THIS MOVIE IS NOT IN YOUR COLLECTION,TRY AGAIN!")
 
 def add_movie():
     

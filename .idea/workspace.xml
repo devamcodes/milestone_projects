@@ -20,17 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="921608ce-f472-4bfb-9b16-2e7992e6317d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scraping_project/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scraping_project/locators/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scraping_project/locators/qoute_locators.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scraping_project/locators/qoutes_page_locators.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scraping_project/pages/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scraping_project/pages/quotes_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scraping_project/parsers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scraping_project/parsers/qoute.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/milestone_projects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/milestone_projects.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database_for_milestone2.db" beforeDir="false" afterPath="$PROJECT_DIR$/database_for_milestone2.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/milestone2_copy.py" beforeDir="false" afterPath="$PROJECT_DIR$/milestone2_copy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/milestone_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/milestone_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/milestone_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/milestone_2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scraping_book/locators/book_locators.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraping_book/locators/book_locators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scraping_project/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraping_project/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scraping_project/locators/qoutes_page_locators.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraping_project/locators/qoutes_page_locators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scraping_project/pages/quotes_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraping_project/pages/quotes_page.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,8 +57,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/milestone_1.py" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.milestone2_copy">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="milestone_projects" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -79,8 +82,52 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="milestone2_copy" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="milestone_projects" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/milestone2_copy.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="milestone_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="milestone_projects" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/milestone_2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.milestone2_copy" />
+        <item itemvalue="Python.milestone_2" />
         <item itemvalue="Python.app" />
       </list>
     </recent_temporary>
@@ -109,5 +156,31 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="421" y="102" key="FileChooserDialogImpl" timestamp="1619548641112">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="421" y="102" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1619548641112" />
+    <state width="1259" height="260" key="GridCell.Tab.0.bottom" timestamp="1619549115940">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1259" height="260" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1619549115940" />
+    <state width="1259" height="260" key="GridCell.Tab.0.center" timestamp="1619549115940">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1259" height="260" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1619549115940" />
+    <state width="1259" height="260" key="GridCell.Tab.0.left" timestamp="1619549115940">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1259" height="260" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1619549115940" />
+    <state width="1259" height="260" key="GridCell.Tab.0.right" timestamp="1619549115940">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1259" height="260" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1619549115940" />
+    <state x="142" y="5" key="SettingsEditor" timestamp="1619546400004">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="142" y="5" key="SettingsEditor/0.0.1280.720@0.0.1280.720" timestamp="1619546400004" />
   </component>
 </project>

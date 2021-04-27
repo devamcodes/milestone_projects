@@ -31,6 +31,23 @@ MY_BOOKS = []
 """
 
 
+main_menu = """
+MAIN MENU:
+1. Add book to MY BOOKS
+2. View My BOOKS
+3. Mark the book as read
+4. Remove the book
+5. Exit the program
+enter the index number 
+-->"""
+def user_name():
+    user_name_input = input("Enter your name:")
+    user_name_boolean = bool(user_name_input)
+    while user_name_boolean != True:
+        print("Incorrect UserName: Please enter the correct user name")
+        user_name_boolean = bool(input("Enter your name:"))
+    print(f"Hello,{user_name_input.title()}")
+
 def add_book():
     user_input_add = input("enter the book name:")
     MY_BOOKS.append(user_input_add)
@@ -68,51 +85,56 @@ def remove_book():
             raise ValueError("Book not found!! Enter correct book name to remove from your list. Try again...")
 
 
-main_menu = """
-MAIN MENU:
-1. Add book to MY BOOKS
-2. View My BOOKS
-3. Mark the book as read
-4. Remove the book
-5. Exit the program
-enter the index number 
--->"""
-user_name = input("enter your name:")
-user_name_boolean = bool(user_name)
+user_name()
 
-if user_name_boolean == True:
-    print(f"Hello,{user_name}")
-else:
-    raise ValueError("Invalid User Name!! Please Enter A Valid Name:")
-user_input_menu = int(input(main_menu))
-user_input_menu_bool = bool(user_input_menu)
-if user_input_menu_bool == True:
-    #error is not working properly.
-    try:
-        while user_input_menu == 0:
-            """Idea--> cereate a function that exits the program which gives the value to while loop to end 
-            and at the end of other functions give the value 0 to while loop to resolve the error."""
-
-    #TODO:program should complete at 5 and error should be also handled if pressed any thing else.
-            if user_input_menu == 1:
+try:
+    user_input = int(input(main_menu))
+    while user_input != 5:
+        try:
+            if user_input == 1:
                 add_book()
-            elif user_input_menu == 2:
+            elif user_input == 2:#todo:try to use split method to remove the book from the list, you can display the book without any qoutes or brackets
                 view_list()
-            elif user_input_menu == 3:
+            elif user_input == 3:#todo: The book is marked as read this should be show in the console to the user.
                 mark_as_read()
-                #todo:if book is not found the error is raised but along with that another error at line 104 raises which should be resolved
-            elif user_input_menu == 4:
+            elif user_input == 4:
                 remove_book()
-            elif user_input_menu == 5:
-                print("exiting the program!! ")
-                break
-            user_input_menu = int(input(main_menu))
-        else :
-            print("Exiting the program")
-            raise ValueError("Incorrect Input!!!")
+            else:
+                print("Error occurred...")
+                input("Press any to run the program again.")
+            user_input = int(input(main_menu))
+
+        except:
+            input("Invalid Input!! try again...")
+            user_input = int(input(main_menu))
+
+except:
+    input("Error occurred while getting the input pls try with the valid input. press any key to continue.")
+    try:
+        user_input = int(input(main_menu))
+        while user_input != 5:
+            # TODO:if enter is pressed instead of any number then raise an error.
+
+            # TODO:if enter is pressed without any value then error should raise and loop should continue.
+            try:
+                if user_input == 1:
+                    add_book()
+                elif user_input == 2:
+                    print()
+                elif user_input == 3:
+                    mark_as_read()
+                elif user_input == 4:
+                    remove_book()
+                else:
+                    print("Error occurred...")
+                    input("Press any to run the program again.")
+                    user_input = int(input(main_menu))
+
+            except:
+                print("Invalid Input!! try again...")
+                user_input = int(input(main_menu))
+
+
     except:
-        raise ValueError("Invalid Input!! Try again...")
-    else:
-        print("exiting the program")
-else:
-    raise ValueError("Invalid Input!! please enter a valid input.")
+        raise ValueError("Multiple Invalid inputs!!! Please try again by run the program from the start...")
+
