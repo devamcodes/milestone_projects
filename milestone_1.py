@@ -64,27 +64,59 @@ def remove_movie():
         raise ValueError("please enter the correct movie name.")
 
 
-enter_user_name()
-user_input = 0#due to this user conformation part can be removed.
-if user_input == 0:
-    while user_input == 0:
-        #TODO:if enter is pressed instead of any number then raise an error.
-        user_input = int(input(menu_option))
-        #TODO:if enter is pressed without any value then error should raise and loop should continue.
-        if user_input == 1:
-            add_movie()
-        elif user_input == 2:
-            print(movies)
-        elif user_input == 3:
-            find_movie_option()
-        elif user_input == 4:#option added
-            remove_movie()
-        elif user_input == 5:
-            print("program completed...")
-            break
-        else:
-            raise ValueError("Invalid Input!! try again...")
-        user_input = 0
 
-else:
-    raise ValueError("Invalid input. please try again..")
+enter_user_name()
+try:
+    user_input = int(input(menu_option))
+    while user_input != 5:
+            #TODO:if enter is pressed instead of any number then raise an error.
+
+            #TODO:if enter is pressed without any value then error should raise and loop should continue.
+        try:
+            if user_input == 1:
+                add_movie()
+            elif user_input == 2:
+                print(movies)
+            elif user_input == 3:
+                find_movie_option()
+            elif user_input == 4:
+                remove_movie()
+            else:
+                print("Error occurred...")
+                input("Press any to run the program again.")
+                user_input = int(input(menu_option))
+
+        except:
+            input("Invalid Input!! try again...")
+            user_input = int(input(menu_option))
+
+except:
+    input("Error occurred while getting the input pls try with the valid input. press any key to continue.")
+    try:
+        user_input = int(input(menu_option))
+        while user_input != 5:
+            # TODO:if enter is pressed instead of any number then raise an error.
+
+            # TODO:if enter is pressed without any value then error should raise and loop should continue.
+            try:
+                if user_input == 1:
+                    add_movie()
+                elif user_input == 2:
+                    print(movies)
+                elif user_input == 3:
+                    find_movie_option()
+                elif user_input == 4:
+                    remove_movie()
+                else:
+                    print("Error occurred...")
+                    input("Press any to run the program again.")
+                    user_input = int(input(menu_option))
+
+            except:
+                print("Invalid Input!! try again...")
+                user_input = int(input(menu_option))
+
+
+    except:
+        raise ValueError("Multiple Invalid inputs!!! Please try again by run the program from the start...")
+
