@@ -13,7 +13,7 @@ test 2--> partially successful.
 test 3--> partly successful
 ERROR FOUND: In the while loop error handling is not employed, the program crashes there.
 """
-from utils import sqlite_databse_for_milestone2_copy
+from utils import Database_Library
 
 
 main_menu = """
@@ -30,7 +30,7 @@ enter the index number
 def add_the_book():
     name = input("enter the book name:")
     author = input("enter the author name:")
-    sqlite_databse_for_milestone2_copy.add_book(name, author)
+    Database_Library.add_book(name, author)
     print(f"The {name} book written by {author} is added to MY BOOKS.")
 
 
@@ -41,11 +41,11 @@ def view_book_list():
     """
     user_input_for_view_books = int(input(method))
     if user_input_for_view_books == 1:
-        for books in sqlite_databse_for_milestone2_copy.view_books():
+        for books in Database_Library.view_books():
             read = 'Read' if books['read'] else 'Not read'
             print(f"The {books['name']} book is written by author {books['author']},you have {read} this book.")
     elif user_input_for_view_books == 2:
-        for books in sqlite_databse_for_milestone2_copy.view_books():
+        for books in Database_Library.view_books():
             read = 'Read' if books['read'] else 'Not read'
             print(f"{books['name']} || {books['author']}  || {read}")
 
@@ -62,7 +62,7 @@ def mark_book_as_read_or_unread():
     if user_choice == 1:
         try:
             name = input("enter the name of the book:")
-            sqlite_databse_for_milestone2_copy.mark_as_read(name)
+            Database_Library.mark_as_read(name)
             print(f"The {name} book is marked as read. ")
         except:
             raise ValueError("Book not found in My Books!!!Try again..")
@@ -70,7 +70,7 @@ def mark_book_as_read_or_unread():
         try:
             name = input("enter the book name:")
             author = input("enter the author name:")
-            sqlite_databse_for_milestone2_copy.mark_as_unread(name, author)
+            Database_Library.mark_as_unread(name, author)
             print(f"The book {name} is marked as unread.")
         except:
             raise ValueError("Book not found!!Please try again..")
@@ -80,7 +80,7 @@ def mark_book_as_read_or_unread():
 def remove_the_book():
     name = input("enter the book name you want to remove:")
 
-    sqlite_databse_for_milestone2_copy.remove_book(name)
+    Database_Library.remove_book(name)
     print(f"The {name} book is removed from MY BOOKS.")
 
 
@@ -93,7 +93,7 @@ def user_name():
     print(f"Hello,{user_name_input.title()}")
 
 # user_input = int(input(main_menu))
-sqlite_databse_for_milestone2_copy.create_books_tables()
+Database_Library.create_books_tables()
 #if i directly enter the book name in th main menu then the program crashes so need to handle the error
 
 # user_name()
